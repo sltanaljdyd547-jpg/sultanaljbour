@@ -1,1 +1,36 @@
-github.com/sltanaljdyd547-jpg/sultanaljbour/settings/pages
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بطاقات حفظ - سلطان الجبور</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0f1220;color:#fff;font-family:-apple-system,sans-serif;padding:12px}
+h1{text-align:center;font-size:20px} p{color:#aab;text-align:center}
+.card{background:#1e2340;border-radius:18px;padding:28px 18px;text-align:center;margin:14px 0;min-height:260px;display:flex;flex-direction:column;justify-content:center}
+.en{font-size:20px;font-weight:800;line-height:1.4;direction:ltr}
+.ar{font-size:18px;line-height:1.8;margin-top:16px}
+button{flex:1;padding:14px;border:0;border-radius:12px;font-size:16px;font-weight:700}
+.row{display:flex;gap:8px;margin-top:8px}
+</style>
+</head>
+<body>
+<h1>بطاقات حفظ • سلطان الجبور</h1>
+<p>Software Costs - بطاقة <span id="c">1</span> من 5</p>
+<div class="card" onclick="flip()"><div id="f"><div class="en" id="en"></div><div class="ar" id="ar"></div></div><div id="b" style="display:none"><div class="ar" id="ex"></div></div></div>
+<div class="row"><button onclick="prev()">السابق</button><button onclick="next()">التالي</button></div>
+<script>
+var d=[
+["Software costs often dominate computer system costs.","تكاليف البرمجيات غالباً بتسيطر على تكاليف نظام الكمبيوتر كله.","السوفتوير هو أكبر تكلفة في النظام كله."],
+["The costs of software on a PC are often greater than the hardware cost.","تكلفة السوفتوير على الـ PC غالباً أكبر من تكلفة الهاردوير.","جهازك نفسه أرخص من البرامج اللي عليه."],
+["Software costs more to maintain than it does to develop.","السوفتوير بيكلف صيانة أكتر مما بيكلف تطوير.","بنبنيه مرة، بس بنضل نصلح فيه طول عمره."],
+["For systems with a long life, maintenance costs may be several times development costs.","للأنظمة اللي عمرها طويل، الصيانة ممكن تكون أضعاف التطوير.","كل ما عاش النظام أكتر، صيانته صارت أغلى بكتير."],
+["Software engineering is concerned with cost-effective software development.","هندسة البرمجيات بتهتم بتطوير سوفتوير فعّال من ناحية التكلفة.","هدف هندسة البرمجيات: سوفتوير كويس وبأقل تكلفة."]
+];
+var i=0,f=0;
+function show(){document.getElementById('en').textContent=d[i][0];document.getElementById('ar').textContent=d[i][1];document.getElementById('ex').textContent=d[i][2];document.getElementById('c').textContent=i+1;document.getElementById('f').style.display='block';document.getElementById('b').style.display='none';f=0;}
+function flip(){f=!f;document.getElementById('f').style.display=f?'none':'block';document.getElementById('b').style.display=f?'block':'none';}
+function next(){i=(i+1)%5;show()}function prev(){i=(i-1+5)%5;show()}show();
+</script>
+</body>
+</html>
